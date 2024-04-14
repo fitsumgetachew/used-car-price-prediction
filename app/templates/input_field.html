@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        <form id="predictionForm" method="POST">
+            <label for="presentPrice">Present Price in USD:</label>
+            <input type="number" id="presentPrice" name="presentPrice" required>
+
+            <label for="sellerType">Seller Type:</label>
+            <select id="sellerType" name="sellerType" required>
+                <option value="I">Individual</option>
+                <option value="D">Dealer</option>
+            </select>
+
+            <label for="manufactureYear">Manufacture Year:</label>
+            <input type="number" id="manufactureYear" name="manufactureYear" required>
+
+            <label for="sellingYear">Selling Year:</label>
+            <input type="number" id="sellingYear" name="sellingYear" required>
+
+            <label for="kmDriven">Total Driven Distance (km):</label>
+            <input type="number" id="kmDriven" name="kmDriven" required>
+
+            <label for="diesel">Is it Diesel?</label>
+            <select id="diesel" name="diesel" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <input type="submit" value="Predict Price">
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
